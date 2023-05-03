@@ -106,7 +106,7 @@ a:link, a:visited, a:link:active, a:visited:active{
     display: flex;
     font-family: 'Neue Machina';
     text-align: center;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 
 }
 
