@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@font-face {
+    font-family: "Neue Machina";
+    src: url("../fonts/NeueMachina-Regular.otf");
+}
+
+*{
+
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+body{
+    
+    color: #ffffff;
+    background-color: #000000;
+
+}
+
+a:link, a:visited, a:link:active, a:visited:active{
+
+    color: white;
+
+}
+
+/*Corpo do portifólio*/
+
+.portifolio{
+
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #ffffff;
+    border-radius: 1rem;
+
+}
+
+/*PseudoElementos para adicionar o background na parte superior esquerda e inferior direita*/
+.portifolio::before, .portifolio::after{
+
+    content: "";
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 140vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../images/background.svg");
+    z-index: -1;
+
+}
+
+.portifolio::after{
+
+    top: auto;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 140vh;
+    transform: rotate(180deg)
+
+}
+
+/*Cabeçalho*/
+
+.header{
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/*PseudoElemento para adicionar 3 pontinhos no canto superior direito do header*/
+.header::before{
+
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -32px;
+    right: 0;
+    width: 42px;
+    height: 78px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background: url("../images/icons/3pontos.png");
+    transform: rotate(90deg);
+    scale: 0.2;
+
+}
+
+.header .foto{
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+}
+
+.header .titulo{
+
+    display: flex;
+    font-family: 'Neue Machina';
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+
+.header .informacoes{
+
+    display: grid;
+    grid-template-columns: 1fr 20fr;
+    gap: 2px;
+    
+}
+
+.header .informacoes img{
+
+    transform: translateY(6px);
+
+}
+
+.header .informacoes p{
+
+    margin: 0.5rem;
+
+}
+
+.header .informacoes a:hover{
+
+    color: #9b9ed3;
+    transition: 0.25s 0.15s ease-in-out;
+
+}
+
+/*Seção quando fechada*/
+
+.secao{
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    margin: 1rem;
+    border: 1px solid #ffffff;
+    transition: 0.5s;
+    overflow: hidden;
+
+}
+
+.secao .titulo{
+
+    text-align: left;
+    font-size: x-large;
+    font-weight: bold;
+
+}
+
+.secao:hover, .secao.aberta{
+
+    background-color: #55569E;
+    border-color: #55569E;
+    
+}
+
+.secao .accordion{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    border: none;
+    color: #ffffff;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+}
+
+.secao .accordion .seta{
+
+    content: "";
+    width: 20px;
+    height: 20px;
+    right: 0;
+    background: url("../images/icons/seta.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(6px);
+    transition: 0.7s;
+
+}
+
+.secao .conteudo{
+
+    display: none;
+    position: absolute;
+    
+}
+
+/*Seção quando aberta*/
+
+.secao.aberta .conteudo{
+
+    display: block;
+    position: relative;
+    padding: 0 1rem 1rem;
+    animation: arrastar 0.7s ease-in-out;
+
+}
+  
+.secao.aberta .seta{
+
+    transform: rotate(180deg);
+
+}
+
+.secao.aberta li{
+
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+}
+
+
+/*Seção de Skills*/
+
+.secao.aberta .skills{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.secao.aberta .skills .conteudo .titulo{
+
+    font-size: 700;
+    font-weight: bold;
+
+}
+
+.secao.aberta .skills .conteudo{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais{
+
+    display: flex;
+
+}
+
+.secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais img{
+
+    width: 40px;
+    height: 40px;
+
+}
+
+
+.secao.aberta .skills .conteudo .campoHabilidadesPessoais .habilidadesPessoais{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.secao.aberta .skills .conteudo .campoHabilidadesPessoais .habilidadesPessoais li{
+
+    padding: 0.25rem;
+
+}
+
+
+/*Seção de Linguagens*/
+
+.secao.aberta .linguagens{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+/*PseudoElemento para adicionar checked*/
+.secao.aberta .linguagens li::before{
+
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/icons/checado.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+
+}
+
+
+/*Seção de Educação*/
+
+.secao.aberta .educacao li{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+.secao.aberta .educacao .titulo{
+
+    font-size: larger;
+    font-weight: bold;
+    
+}
+
+.secao.aberta .educacao .local{
+
+    color: #ffffffcb;
+    font-weight: 400;
+    
+}
+
+
+
+/*Seção de Projetos*/
+
+.secao.aberta .projetos li{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+.secao.aberta .projetos .titulo{
+
+    font-size: larger;
+    font-weight: bold;
+    
+}
+
+/*PseudoElemento para adicionar o símbolo do GitHub*/
+.secao.aberta .projetos .titulo::before{
+
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/icons/githubIcon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+    transform: translateY(1px);
+
+}
+
+.secao.aberta .projetos .link{
+
+    width: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    font-weight: 400;
+
+}
+
+.secao.aberta .projetos .link a{
+
+    color: #ffffff8a;
+    width: 100%;
+
+}
+
+.secao.aberta .projetos .link a:hover{
+
+    color: #ffffffcb;
+    transition: 0.25s 0.15s ease-in-out;
+
+}
+
+
+/*Seção de Experiência Profissional*/
+
+.secao.aberta .experienciaProfissional li{
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+.secao.aberta .experienciaProfissional .titulo{
+
+    font-size: larger;
+    font-weight: bold;
+    
+}
+
+.secao.aberta .experienciaProfissional .data{
+
+    padding: 1rem 0;
+    font-weight: 400;
+    color: #ffffffcb;
+
+}
+
+.secao.aberta .experienciaProfissional .data::before{
+
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/icons/calendario.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 0.5rem;
+
+}
+
+.secao.aberta .experienciaProfissional .descricao{
+
+    font-weight: 400;
+
+}
+
+
+/*Barra de scroll invisível*/
+.secao.aberta .projetos .link::-webkit-scrollbar{
+    
+    display: none;
+    
+}
+
+@keyframes arrastar{
+    
+    from{
+
+        transform: translateY(-5%);
+        opacity: 0.3;
+
+    }
+
+    to{
+
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+
+}
+
+@media screen and (min-width: 768px){
+
+    .portifolio{
+
+        max-width: 1024px;
+        margin: 1.5rem auto;
+
+    }
+
+    .portifolio::before, .portifolio::after{
+
+        width: 70vw;
+
+    }
+
+    .header{
+
+        display: grid;
+        grid-template-areas:
+
+            "foto titulo"
+            "foto informacoes"
+            
+        ;
+
+    }
+
+    .header .foto{
+
+        grid-area: foto;
+        margin: 0 auto;
+
+    }
+
+    .header .titulo{
+
+        grid-area: titulo;
+        max-width: 220px;
+        text-align: left;
+
+    }
+
+    .header .informacoes{
+
+        grid-area: informacoes;
+        width: 18rem;
+
+    }
+
+
+    /*Seção de Skills*/
+
+    .secao.aberta .skills .conteudo{
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12.5%;
+    
+    }
+    
+    .secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais{
+    
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+    
+    }
+
+    .secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais img{
+
+        width: 75px;
+        height: 75px;
+    
+    }
+    
+    .secao.aberta .skills .conteudo .campoHabilidadesPessoais .habilidadesPessoais{
+    
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+
+    .secao.aberta .skills .conteudo .campoHabilidadesPessoais .titulo{
+
+        padding-bottom: 1rem;
+    
+    }
+
+    .secao.aberta .skills .conteudo .campoHabilidadesPessoais .habilidadesPessoais li{
+
+        padding: 1rem;
+    
+    }
+
+
+    /*Seção de Projetos*/
+
+    .secao.aberta .projetos .link{
+
+        overflow: auto;
+        overflow-y: auto;
+    
+    }
+    
+}
