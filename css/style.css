@@ -255,16 +255,22 @@ a:link, a:visited, a:link:active, a:visited:active{
 .secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais{
 
     display: flex;
+    justify-content: space-around;
 
 }
 
 .secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais img{
 
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 
 }
 
+.secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais li{
+
+    padding: 1rem 0;
+
+}
 
 .secao.aberta .skills .conteudo .campoHabilidadesPessoais .habilidadesPessoais{
 
@@ -531,6 +537,13 @@ a:link, a:visited, a:link:active, a:visited:active{
         width: 75px;
         height: 75px;
     
+    }
+
+    
+    .secao.aberta .skills .conteudo .campoHabilidadesProfissionais .habilidadesProfissionais li{
+
+        padding: 1rem;
+
     }
     
     .secao.aberta .skills .conteudo .campoHabilidadesPessoais .habilidadesPessoais{
